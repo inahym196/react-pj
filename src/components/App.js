@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
 function App() {
+  console.log("< App >")
   const classes = useStyles();
 
   return (
