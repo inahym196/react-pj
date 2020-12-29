@@ -37,7 +37,6 @@ function StrToStation() {
   function handleClick() {
     
     const url = "https://react-pj-backend.herokuapp.com/api/v1/tostation";
-    const method = "POST";
 
     if (inputVal !== "" && inputVal !== prevInputVal) {
       setAjaxVal({
@@ -48,7 +47,11 @@ function StrToStation() {
         error: false,
       });
 
-      fetch(url, { method })
+      fetch(url, {
+        method: "POST",
+        headers: {"Content-Type": "text/plain"},
+        body: inputVal,
+        })
         .then((response) => response.json())
         .then(
           (json) => {
